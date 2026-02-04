@@ -65,7 +65,6 @@ div.stButton > button:first-child {
 """, unsafe_allow_html=True)
 
 st.sidebar.title("Settings")
-st.write("Model version: 320x320 weights build")
 lang = st.sidebar.selectbox("Choose Language / भाषा चुनें:", ["English", "हिन्दी"])
 
 
