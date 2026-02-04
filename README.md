@@ -34,7 +34,7 @@ This project uses Deep Learning to automatically identify waste type from an ima
 
 ## Dataset
 
-TrashNet — a noisy, real-world dataset with visually overlapping classes.
+TrashNet — This dataset contains similar-looking classes (paper vs cardboard, plastic vs trash), so even strong models cap near ~88% accuracy. This illustrates real-world challenges in waste classification.
 
 ## 🏗️ Model Architecture
 
