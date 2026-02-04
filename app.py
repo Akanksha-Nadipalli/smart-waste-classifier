@@ -6,7 +6,31 @@ from tensorflow.keras.applications.mobilenet_v2 import preprocess_input
 import io
 
 # Load model
-model = tf.keras.models.load_model("garbage_mobilenet_augmented.keras")
+from tensorflow.keras.applications import MobileNetV2
+from tensorflow.keras import layers, models
+
+def build_model():
+    base = MobileNetV2(
+        weights='imagenet',
+        include_top=False,
+        input_shape=(320,320,3)
+    )
+
+    base.trainable = False
+
+    model = models.Sequential([
+        base,
+        layers.GlobalAveragePooling2D(),
+        layers.Dense(128, activation='relu'),
+        layers.Dropout(0.3),
+        layers.Dense(6, activation='softmax')
+    ])
+
+    return model
+
+model = build_model()
+model.load_weights("model/waste_mobilenet.weights.h5")
+
 CLASS_NAMES = ['cardboard', 'glass', 'metal', 'paper', 'plastic', 'trash']
 
 # styling
@@ -69,7 +93,7 @@ if image is not None:
     with col1:
         st.image(image, caption="Input Image", use_container_width=True)
 
-    img = image.resize((224,224))
+    img = image.resize((320,320))
     img_array = np.array(img)
     img_array = preprocess_input(img_array)
     img_array = np.expand_dims(img_array, axis=0)
