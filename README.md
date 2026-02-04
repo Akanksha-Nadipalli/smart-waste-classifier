@@ -5,43 +5,16 @@
 🔗 https://smart-waste-classifier-5sbkuevrfz8twxwx3ptdcc.streamlit.app/
 
 ## ♻️ Smart Waste Classification App
-
-An end-to-end deep learning project that classifies waste images into six categories using a transfer-learned MobileNetV2 model and deploys it as an interactive Streamlit web app.
-
-This project demonstrates:
-
-• Computer Vision
-
-• Transfer Learning
-
-• Data Augmentation
-
-• Model Deployment
-
-• Real-time inference in a web UI
+An end-to-end Deep Learning project that classifies waste images into six categories using Transfer Learning with MobileNetV2 and deploys the model as an interactive Streamlit web application.
+Achieved 86.2% test accuracy on a challenging real-world waste dataset.
 
 ## 🧠 Problem Statement
-
 Improper waste segregation is a major challenge in recycling systems. Manual sorting is inefficient and error-prone.
 
-This project uses deep learning to automatically identify waste type from an image, enabling smarter recycling workflows and forming the foundation for smart bins / IoT-based waste systems.
+This project uses Deep Learning to automatically identify waste type from an image, forming the foundation for smart recycling systems and IoT-based smart bins.
 
 🛠️ Tech Stack
 <p align="left"> <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" /> <img src="https://img.shields.io/badge/Streamlit-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white" /> <img src="https://img.shields.io/badge/TensorFlow-FF6F00?style=for-the-badge&logo=tensorflow&logoColor=white" /> <img src="https://img.shields.io/badge/Keras-D00000?style=for-the-badge&logo=keras&logoColor=white" /> <img src="https://img.shields.io/badge/MobileNetV2-000000?style=for-the-badge&logo=google&logoColor=white" /> </p>
-
-## ✨ Features
-
-• Upload image or capture from camera
-
-• Real-time waste classification
-
-• Prediction confidence score
-
-• Clean and responsive UI
-
-• Transfer learning with data augmentation
-
-• Deployable ML model as a web app
 
 ## 🗂️ Waste Categories
 
@@ -59,32 +32,35 @@ This project uses deep learning to automatically identify waste type from an ima
 
 • Trash
 
-## 🧠 Model Architecture
+## Dataset
 
-Transfer learning with MobileNetV2 pretrained on ImageNet.
+TrashNet — a noisy, real-world dataset with visually overlapping classes.
 
-Key techniques:
+## 🏗️ Model Architecture
+
+Transfer learning with MobileNetV2:
+
+• Input resolution: 320×320
 
 • Frozen convolutional base
 
 • Custom classification head
 
-• Extensive data augmentation
+• Strong data augmentation
 
-• Fine-tuning on waste dataset
+• Fine-tuning of top layers
 
-• Softmax output for 6-class prediction
+• Label smoothing + early stopping
 
 ## 📊 Model Performance
 
-Add your actual values here after training
+Test Accuracy: 86.2%
+This performance reflects real-world challenges due to class similarity and background noise in TrashNet.
 
-Metric	Value
-Training Accuracy	XX%
-Validation Accuracy	XX%
-Test Accuracy	XX%
+## Confusion Matrix: 
 
-Adding an accuracy graph and confusion matrix here will significantly boost project credibility.
+![Confusion Matrix](screenshots/confusion_matrix.png)
+
 
 ## 📸 Screenshots
 
@@ -132,18 +108,6 @@ streamlit run app.py
 ```
 
 Open the provided URL in your browser and start classifying waste.
-
-## 🚀 Future Improvements
-
-• Edge deployment on Raspberry Pi (Smart Bin)
-
-• Add more waste categories
-
-• Live video classification
-
-• Model quantization for faster inference
-
-• Integration with IoT sensors
 
 ## 📄 License
 
